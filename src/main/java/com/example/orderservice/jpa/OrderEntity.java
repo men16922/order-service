@@ -16,25 +16,25 @@ public class OrderEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 120)
+    @Column(name = "product_id", nullable = false, length = 20)
     private String productId;
 
     @Column(nullable = false)
     private Integer qty;
 
-    @Column(nullable = false)
+    @Column(name = "unit_price", nullable = false)
     private Integer unitPrice;
 
-    @Column(nullable = false)
+    @Column(name = "total_price", nullable = false)
     private Integer totalPrice;
 
-    @Column(nullable = false)
+    @Column(name = "user_id", nullable = false)
     private String userId;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "order_id", nullable = false, unique = true)
     private String orderId;
 
-    @Column(nullable = false, updatable = false, insertable = false)
+    @Column(name = "created_at", nullable = false, updatable = false, insertable = false)
     @ColumnDefault(value = "CURRENT_TIMESTAMP")
     private Date createdAt;
 }
